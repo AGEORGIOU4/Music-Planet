@@ -1,0 +1,43 @@
+<!--
+* Author: Andreas Georgiou
+* Email: ageorgiou4@uclan.ac.uk
+* Music Planet is an interactive mobile application
+  for online music services
+-->
+
+<?php session_start();?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ERROR 404</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' href='Images/favicon.ico' type='image/x-icon'>
+</head>
+
+<body style="background-color:#FFFFFF";>
+
+<!--====================HEADER=====================-->
+
+<!--Header with an accordion hamburger dropdown menu-->
+<header>
+    <img class="musicPlanetLogo" src="Images/MusicPlanetLogo.png" alt="Music Planet Logo">
+</header>
+
+<div id="part1" style="height:45%; text-align:center;">
+    <h1 id="heading" style="font-size: 35px; margin: 15px auto; color: #DB53FB;">OOPS!<br>SOMETHING<br>WENT WRONG!!</h1>
+	
+	<img src="Images/error_404.png" id="Images/error_404.png" style="height: 220px; 2width: 340px;">
+</div>
+
+<div id="goHomeBtn" style="text-align:center; padding:100px 10px;">
+<p style="font-weight:900; color:#313131; padding: 10px;"> We are doing our best to solve it. On the meantime, you can still browse your favorite music!</p>
+<button type="button" onclick="window.location.href = 'https://vesta.uclan.ac.uk/~ageorgiou4/Home.php';">Go Back!</button>
+</div>
+
+</body>
+
+</html>

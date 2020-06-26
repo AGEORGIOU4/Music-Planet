@@ -1,0 +1,996 @@
+ 
+/* Author: Andreas Georgiou * Email: ageorgiou4@uclan.ac.uk * Music Planet is an interactive mobile application for online music services */
+/*================================================================================================================================*/
+/*=============================================MOBILE HEADER-FOOTER-BODY==========================================================*/
+/*================================================================================================================================*/
+ * {
+     font-family: sans-serif;
+}
+ html, body {
+     height: 100% 
+}
+ body {
+     background-color: #313131;
+     color: white;
+}
+/*=======================HEADER===========================*/
+ .musicPlanetLogo {
+     width: 170px;
+     height: 54px;
+}
+ #musicPlanetLogo2 {
+     width: 127px;
+     height: 30px;
+}
+/*LARGE BOX*/
+ .welcomeMsg {
+     background-color: #db53fb;
+     height: 58px;
+     width: 100%;
+     font-weight: 900;
+     color: white;
+     margin: 0px;
+}
+/* BOX 1*/
+ #avatarDiv {
+     float: right;
+     width: 58px;
+     height: 58px;
+}
+ img.avatarMenu {
+     text-align: right;
+     margin: 13px;
+     width: 32px;
+     height: 32px;
+     border-radius: 50%;
+     background-color: #bdbdbd;
+     padding: 2px;
+}
+/* BOX 2 */
+ #welcomeMsgP {
+     width: 56%;
+     height: 58px;
+     float: right;
+}
+ #welcomeMsg {
+     margin: 18px;
+     text-align: right;
+     padding-left: 10px;
+}
+ #userPlanId {
+     text-align: left;
+     float: right;
+     width: 22%;
+     height: 58px;
+}
+ img.planMenu {
+     margin: -4px;
+     width: 105px;
+     height: 66px;
+     border-radius: 5%;
+     background-color: #bdbdbd;
+}
+ header {
+     background-color: #db53fb;
+     height: 58px;
+}
+ #menuHeader input {
+     display: none;
+}
+ #menuHeader #menuBtn {
+     cursor: pointer;
+}
+ #menuHeader #menuBtn::after {
+     border-radius: 50%;
+     border: 1px solid #5a5a5a;
+     color: #5a5a5a;
+     content: "\2630";
+     display: block;
+     width: 25px;
+     height: 25px;
+     position: absolute;
+     padding: 5px;
+     right: 20px;
+     top: 20px;
+     text-align: center;
+     font-size: 18px;
+     background-color: #f2f2f2;
+}
+ #menuHeader input[type=checkbox]:checked + #menuBtn::after {
+     border-radius: 50%;
+     border: 1px solid #5a5a5a;
+     content: "\2630";
+     color: #5a5a5a;
+     display: block;
+     width: 25px;
+     height: 25px;
+     position: absolute;
+     padding: 5px;
+     right: 20px;
+     top: 20px;
+     text-align: center;
+     font-size: 18px;
+     background-color: #bdbdbd;
+}
+ nav {
+     overflow: hidden;
+     background: #f2f2f2;
+     transition: max-height 0.1s;
+     max-height: 0;
+}
+ #menuLinks {
+     background-color: #f1f1f1;
+     text-align: center;
+     text-align: center;
+}
+/*Hidden Menu*/
+ .hiddenMenuList {
+     padding: 0;
+     list-style-type: none;
+     text-align: center;
+}
+ .hiddenList a {
+     display: block;
+     margin: 15px 10px;
+     color: #414042;
+     font-size: x-large;
+     text-decoration: none;
+     font-weight: bold;
+}
+ #menuHeader input:checked ~ nav {
+    /*The max-height must be of a large number*/
+     max-height: 100vh;
+}
+/*=======================FOOTER===========================*/
+ footer {
+     width: 100%;
+     background-color: #000000;
+     color: #FFFFFF;
+     text-align: center;
+     border-top: 3px solid #DB53FB;
+}
+ .footerMenu {
+     margin: 10px;
+     text-align: center;
+     border-bottom: 1px solid white;
+}
+ .footerMenu a {
+     font-size: large;
+     color: #FFFFFF;
+     text-decoration: none;
+}
+ #footerParagraph {
+     margin-bottom: 0;
+     padding-bottom: 15px;
+     font-size: small;
+     color: #ffa500;
+}
+/*================================================================================================================================*/
+/*======================================END OF MOBILE HEADER-FOOTER-BODY==========================================================*/
+/*================================================================================================================================*/
+/*==LOGIN PAGE (MOBILE)==*/
+ .loginBar {
+     width: 220px;
+     height: 30px;
+     margin: 25px 0 5px 0;
+     padding-left: 10px;
+     color: #5a5a5a;
+     font-weight: bold;
+     border: 1px solid #5a5a5a;
+     border-radius: 30px;
+     outline: none;
+}
+/*==SIGN UP PAGE (MOBILE)==*/
+/* Form */
+/* Full-width input fields */
+ input[type=text], input[type=password], input[type=option] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+}
+ .planChoices {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     background-color: white;
+     border-radius: 0px;
+}
+ .offersList {
+     list-style-type :none;
+     padding: 0;
+     text-align: center;
+}
+ #offersList {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     padding: 30px;
+     margin: 30px 0px;
+}
+/* Set a style for all buttons */
+ button {
+     background-color: #268029;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     cursor: pointer;
+     width: 100%;
+}
+ button:hover {
+     opacity: 0.8;
+}
+/* Extra styles for the cancel button */
+ .cancelbtn {
+     width: auto;
+     padding: 10px 18px;
+     margin-left: 35px;
+     background-color: #f44336;
+}
+/* Center the image and position the close button */
+ .imgcontainer {
+     text-align: center;
+     margin: 24px 0 12px 0;
+     position: relative;
+}
+ img.avatar {
+     width: 20%;
+     border-radius: 50%;
+     background-color: #bdbdbd;
+     padding: 10px;
+}
+ .container {
+     padding: 16px;
+}
+ input[type="file"] {
+     display: none;
+}
+ #uploadLabel {
+     padding: 10px 0;
+     color: white;
+     width: 100%;
+     background-color: #5a5a5a;
+     margin: auto;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     font-size: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 13.3px;
+     padding: 10px 0;
+     border: 1px solid white;
+}
+ #uploadFile {
+     padding: 16px 16px 0;
+}
+/*==HOME PAGE (MOBILE)==*/
+/*=======================PART I========================*/
+ #part1 {
+     text-align: center;
+     border-top: 3px solid #313131;
+}
+ #heading {
+     margin: 45px auto;
+     font-size: 45px;
+     font-weight: 900;
+     color: #DB53FB;
+}
+ #subHeading {
+     margin: 30px 0px;
+     font-size: x-large;
+     font-weight: 600;
+     color: #f2f2f2;
+}
+ #searchBar {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+ #arrow {
+     width: 10%;
+     margin: 40px 100px;
+     border-radius: 30px;
+}
+ #homePic {
+     width: 100%;
+}
+ #plansTag {
+     margin: 35px 5px 80px 5px;
+     background-color: #db53fb;
+     font-size: x-large;
+}
+ #plansTag a {
+     padding: 10px 25px;
+     font-size: x-large;
+     text-decoration: none;
+     color: #FFFFFF;
+     border: 6px solid #FFFFFF;
+}
+/*======================PART II========================*/
+ .part2 {
+     text-align: center;
+}
+ #aboutUsHome {
+     margin: 0 0 60px 0;
+     padding: 30px;
+     background-color: #414042;
+     border-radius: 5px;
+}
+ #aboutUsParagraphHome {
+     color: #f2f2f2;
+     font-weight: 800;
+     text-align: justify;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+ #plansBtn {
+     margin: 30px 0px 0px;
+     padding: 15px;
+     text-align: center;
+     font-size: x-large;
+     font-weight: 900;
+     background-color: #DB53FB;
+     color: #FFFFFF;
+     border-radius: 5px;
+}
+ #plansBtn a {
+     text-decoration: none;
+     color: #ffffff;
+}
+/*======================PART III========================*/
+ #part3 {
+     padding: 0 30px;
+     font-size: large;
+     background-color: #313131;
+}
+ .planChoices {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+}
+ .offersList {
+     list-style-type :none;
+     padding: 0;
+     text-align: center;
+     background-color: #313131;
+     color: #f2f2f2;
+}
+ #offersList {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     padding: 30px;
+     margin: 30px 0px;
+}
+ .container {
+     padding: 16px;
+}
+/*Accordion Menu - Code obtained from https://code-boxx.com
+/*/
+/* [THE ENTIRE TAB] */
+ .tabHome {
+     position: relative;
+}
+/* [THE LABEL] */
+ .tabHome input {
+     display: none;
+}
+ .tabHome label {
+     display: block;
+     padding: 10px;
+     text-align: center;
+     font-size: larger;
+     color: #313131;
+     font-weight: bold;
+     cursor: pointer;
+}
+ .tabHome label::after {
+     content: "\276d";
+     display: block;
+     position: absolute;
+     right: 10px;
+     top: 10px;
+     transition: all 0.4s;
+}
+ .tabHome input[type=checkbox]:checked + label::after {
+     transform: rotate(90deg);
+}
+/* [THE CONTENTS] */
+ .tab-contentHome {
+     overflow: hidden;
+    /* This is why we use max-height */
+     transition: max-height 0.1s;
+     max-height: 0;
+}
+ .tab-contentHome p {
+     margin: 0 100px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     text-align: center;
+     border-bottom: 1px solid;
+     font-size: medium;
+     font-weight: 900;
+}
+ .tabHome input:checked ~ .tab-contentHome {
+     max-height: 100vh;
+}
+ #lastP {
+     border-bottom: 0;
+}
+/*==ABOUT US PAGE(MOBILE)==*/
+ #aboutUsParagraphSection {
+     margin-left: auto;
+     margin-right: auto;
+     color: #f2f2f2;
+     border-top: 3px solid #313131;
+}
+ #mark1 {
+     background-color: #DB53FB;
+}
+ #aboutUsHeading {
+     margin-top: 0;
+     padding: 30px 20px;
+     text-align: left;
+}
+ #aboutUsParagraph {
+     width: 90%;
+     margin-top: -30px;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 0 20px;
+     text-align: justify;
+     color: #f2f2f2;
+}
+ #sentence {
+     padding: 0 20px;
+     text-align: justify;
+}
+ .aboutUsHR {
+     width: 90%;
+     color: #f2f2f2;
+     border-color: #f2f2f2;
+}
+ .image {
+     text-align: center;
+}
+ #headphones {
+     width: 90%;
+     margin-top: 16px;
+     margin-bottom: 30px;
+}
+ #references {
+     padding: 0 20px;
+     text-align: left;
+     color: #f2f2f2;
+}
+/*==MUSIC SELECTION PAGE (MOBILE)==*/
+ #musicSelectionBody {
+     background-color: #DB53FB;
+}
+ #musicSection {
+     border-top: 3px solid #313131;
+}
+/*Table styles*/
+ .musicSelectionTable {
+     border-collapse: collapse;
+}
+ .musicTable {
+     margin-top: 0;
+}
+ .musicTable tr:nth-child(even) {
+     background-color: white;
+}
+ .musicTable th {
+     color: #DB53FB;
+     text-align: center;
+}
+ #lastTab {
+     border-bottom: 0;
+}
+ .play {
+     width: 12%;
+     text-align: center;
+}
+ .playButton {
+     width: 100%;
+}
+ td.thumb {
+     padding:0;
+}
+ img.thbButton {
+     width: 100%;
+}
+ .audioBox {
+     height: 80px;
+     width: 110px;
+     padding-bottom: 25px;
+}
+ .genre {
+     display: none;
+}
+ .artist {
+     display:none;
+}
+ .album {
+     display: none;
+}
+ td.name {
+     width: 120px;
+}
+/*Accordion Genres Dropdown Menu*/
+/* Hide the checkbox */
+ .tab input {
+     display: block;
+}
+ .tab label {
+     display: block;
+     padding: 25px;
+     margin: 20px 0px;
+     text-align: center;
+     color: #313131;
+     font-size: large;
+     font-weight: bold;
+     cursor: pointer;
+     background-color: #f2f2f2;
+     border: 1px solid #313131;
+}
+/*==FEATURED ARTIST PAGE (MOBILE)==*/
+ #featuredArtist1 {
+     display: block;
+     margin-top: -26px;
+     margin-bottom: 6px;
+     color: #d5d5d5;
+     text-align: center;
+     font-size: large;
+}
+ #featuredArtist2 {
+     display: none;
+     margin-top: -26px;
+     margin-bottom: 6px;
+     color: #d5d5d5;
+     text-align: center;
+     font-size: large;
+}
+ #artistBiographyParagraphSection {
+     margin-top: 0;
+     background-color: #313131;
+     border-top: 3px solid #313131;
+}
+ #artistBiography {
+     margin: 0;
+     padding: 20px 20px 0;
+     color: #f2f2f2;
+     text-align: left;
+}
+ #artistBiographyParagraph1 {
+     display: block;
+     margin: -30px 20px 0;
+     padding-bottom: 15px;
+     color: #f2f2f2;
+     text-align: justify;
+     border-bottom: 1px solid #f2f2f2;
+}
+ #artistBiographyParagraph2 {
+     display: none;
+     margin: -30px 20px 0;
+     padding-bottom: 15px;
+     color: #2a2a2a;
+     text-align: justify;
+     border-bottom: 1px solid #f2f2f2;
+}
+ #albums {
+     margin-bottom: 0;
+     padding-bottom: 20px;
+     padding-left: 20px;
+     color: #f2f2f2;
+}
+ #album1, #album2, #album3, #album4, #album5, #album6 {
+     width: 100px;
+     height: 80px;
+     border: 2px solid black;
+     border-radius: 2px;
+}
+ .row {
+     height: 70%;
+     margin: 0 10px;
+}
+ .column {
+     float: left;
+     width: 30%;
+     height: 185px;
+     padding: 5px;
+     text-align: center;
+     background-color: #FFFFFF;
+}
+/* Form */
+/* Full-width input fields */
+ input[type=text], input[type=password] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+}
+ textarea {
+     margin: 0 4px 0 0;
+     width: 54%;
+     float: right;
+     height: 90px;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+}
+/* Rating */
+ .rate {
+     width: 44%;
+     float: left;
+}
+ .star-cb-group {
+    /* remove inline-block whitespace */
+     font-size: 0;
+    /* flip the order so we can use the + and ~ combinators */
+     unicode-bidi: bidi-override;
+     direction: rtl;
+    /* the hidden clearer */
+}
+ .star-cb-group * {
+     font-size: 1.5rem;
+}
+ .star-cb-group > input {
+     display: none;
+}
+ .star-cb-group > input + label {
+    /* only enough room for the star */
+     display: inline-block;
+     overflow: hidden;
+     text-indent: 9999px;
+     width: 1em;
+     white-space: nowrap;
+     cursor: pointer;
+}
+ .star-cb-group > input + label:before {
+     display: inline-block;
+     text-indent: -9999px;
+     content: "☆";
+     color: #888;
+}
+ .star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
+     content: "★";
+     color: #ffa500;
+     text-shadow: 0 0 1px #333;
+}
+ .star-cb-group > .star-cb-clear + label {
+     text-indent: -9999px;
+     width: .5em;
+     margin-left: -.5em;
+}
+ .star-cb-group > .star-cb-clear + label:before {
+     width: .5em;
+}
+ .star-cb-group:hover > input + label:before {
+     content: "☆";
+     color: #888;
+     text-shadow: none;
+}
+ .star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
+     content: "★";
+     color: #ffa500;
+     text-shadow: 0 0 1px #333;
+}
+/*General styling */
+/* Set a style for all buttons */
+ button {
+     background-color: #268029;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     cursor: pointer;
+     width: 100%;
+}
+ button:hover {
+     opacity: 0.8;
+}
+/* Extra styles for the cancel button */
+ .cancelbtn {
+     width: auto;
+     padding: 10px 18px;
+     background-color: #f44336;
+}
+/* Center the image and position the close button */
+ .imgcontainer {
+     text-align: center;
+     margin: 24px 0 12px 0;
+     position: relative;
+}
+ img.avatar {
+     width: 20%;
+     border-radius: 50%;
+     background-color: #bdbdbd;
+     padding: 10px;
+}
+ .container {
+     padding: 16px;
+}
+/* Account Page*/
+ .card {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     text-align: center;
+     font-family: arial;
+}
+ .title {
+     color: grey;
+     font-size: 18px;
+}
+/*NEWWWWWW */
+/*NEWWWWWW */
+ #myPlaylist {
+     padding: 15px;
+}
+ #generateRandom {
+     width: 80%;
+}
+ #refreshButton {
+     width: 20%;
+}
+ #refreshImg {
+     width: 50px;
+     height: 50px;
+}
+ a {
+     color: #f2f2f2;
+}
+ .num {
+     color: #f2f2f2;
+}
+ .plusSign {
+     color: #f2f2f2;
+     font-size: 30px;
+}
+ #browseButton {
+     background-color: #DB53FB;
+}
+ #btnsMenu {
+     border-bottom: 3px solid #313131;
+}
+
+ * {
+    box-sizing: border-box
+}
+ .mySlides {
+    display: none
+}
+ img {
+    vertical-align: middle;
+}
+/* Slideshow container */
+ .slideshow-container {
+     max-width: 1000px;
+     position: relative;
+     margin: 20px auto;
+}
+/* Next & previous buttons */
+ .prev, .next {
+     cursor: pointer;
+     position: absolute;
+     top: 43%;
+     width: auto;
+     padding: 16px;
+     margin-top: -22px;
+     color: #f2f2f2;
+     font-weight: bold;
+     font-size: 18px;
+     transition: 0.6s ease;
+     border-radius: 0 3px 3px 0;
+     user-select: none;
+}
+/* Position the "next button" to the right */
+ .next {
+     right: 0;
+     border-radius: 3px 0 0 3px;
+}
+ .prev {
+     left: 0;
+     border-radius: 3px 0 0 3px;
+
+}
+
+/* Caption text */
+ .text {
+     color: #f2f2f2;
+     font-size: 20px;
+     padding: 8px 12px;
+     bottom: 8px;
+     width: 100%;
+     text-align: center;
+}
+/* Number text (1/3 etc) */
+ .numbertext {
+     color: #f2f2f2;
+     font-size: 12px;
+     padding: 8px 12px;
+     position: absolute;
+     top: 0;
+}
+/* The dots/bullets/indicators */
+ .dot {
+     cursor: pointer;
+     height: 15px;
+     width: 15px;
+     margin: 0 2px;
+     background-color: #bbb;
+     border-radius: 50%;
+     display: inline-block;
+     transition: background-color 0.6s ease;
+}
+ .active, .dot:hover {
+     background-color: #717171;
+}
+/* Fading animation */
+ .fade {
+     -webkit-animation-name: fade;
+     -webkit-animation-duration: 1.5s;
+     animation-name: fade;
+     animation-duration: 1.5s;
+}
+ @-webkit-keyframes fade {
+     from {
+        opacity: .4
+    }
+     to {
+        opacity: 1
+    }
+}
+ @keyframes fade {
+     from {
+        opacity: .4
+    }
+     to {
+        opacity: 1
+    }
+}
+/* On smaller screens, decrease text size */
+ @media only screen and (max-width: 300px) {
+     .prev, .next,.text {
+        font-size: 11px
+    }
+}
+
+.albumSearch {
+	background-color: #313131;
+}
+
+#searchMagn {
+	background-color: #ffffff;
+}
+
+#cleanbtn {
+	background-color: #ffffff;
+}
+
+#cleanbtnRecomm {
+	background-color: #ffffff;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content */
+.modal-content {
+	position: absolute;
+	top: 72px;
+	background-color: #ffffff;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 100%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+    /*Accordion Genres Dropdown Menu*/
+    /* Hide the checkbox */
+    .tab6 input {
+        display: none;
+
+    }
+
+    .tab6 label {
+        display: block;
+		margin-top: 60px;
+        padding: 25px;
+        text-align: center;
+        color: #313131;
+        font-size: large;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: #f2f2f2;
+		border-top: 1px solid #313131;
+        border-bottom: 1px solid #313131;
+    }
+
+
+    .tab6 label::after {
+        content: "\276d";
+        display: block;
+        position: absolute;
+        right: 30px;
+        margin-top: -22px;
+        transition: all 0.4s;
+    }
+
+    .tab6 input[type=checkbox]:checked + label::after {
+        transform: rotate(90deg);
+    }
+
+    /*Table Content*/
+    .tab-content6 {
+        overflow: hidden;
+        transition: max-height 0.1s;
+        max-height: 0;
+
+    }
+
+    .tab6 input:checked ~ .tab-content6 {
+        max-height: 10000vh;
+    }
+	
+	 /*Table styles*/
+    .musicSelectionTable6 {
+        border-collapse: collapse;
+    }
+
+    .musicTable6 {
+        margin-top: 0;
+        background-color: #FFFFFF;
+    }
+
+
+    .musicTable6 tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .musicTable6 th {
+        color: #DB53FB;
+        text-align: center;
+    }
